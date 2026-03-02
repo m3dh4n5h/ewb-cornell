@@ -1,11 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>About | EWB Cornell</title>
-    <link rel="stylesheet" href="../css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — EWB Cornell</title>
+  <script>(function(){var t=localStorage.getItem('ewb-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
+  <link rel="stylesheet" href="../css/style.css" />
 </head>
 <body>
-    <h1>About Us</h1>
+
+<nav class="nav" id="mainNav"><div class="container"><div class="nav-inner">
+  <a href="/" class="nav-logo"><div class="nav-logo-mark">E</div>EWB Cornell</a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="/pages/about.html" class="active">About</a></li>
+      <li><a href="/pages/teams.html">Teams</a></li>
+      <li><a href="/pages/projects.html">Projects</a></li>
+      <li><a href="/pages/gallery.html">Gallery</a></li>
+      <li><a href="/pages/sponsors.html">Sponsors</a></li>
+      <li><a href="/pages/apply.html" class="nav-cta">Apply Now</a></li>
+    </ul>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">☀️</button>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</div></div></nav>
+<div class="mobile-backdrop" id="mobileBackdrop"></div>
+<nav class="mobile-menu" id="mobileMenu">
+  <a href="/pages/about.html">About</a><a href="/pages/teams.html">Teams</a>
+  <a href="/pages/projects.html">Projects</a><a href="/pages/gallery.html">Gallery</a><a href="/pages/sponsors.html">Sponsors</a>
+  <div class="mobile-theme-row"><span>Theme</span><button class="theme-toggle" onclick="toggleTheme()">☀️</button></div>
+  <a href="/pages/apply.html" class="mobile-cta">Apply Now →</a>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <a href="/" class="back-link">← Home</a>
+    <div class="page-hero-tag">About EWB Cornell</div>
+    <h1>Our <em>Mission</em></h1>
+    <p class="page-hero-sub">Engineers Without Borders at Cornell applies engineering skills to improve quality of life through community-driven development</p>
+  </div>
+</section>
+
+<!-- SECTION 1: MISSION -->
+<section class="section">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;">
+
+      <!-- Left: Why We Exist -->
+      <div>
+        <div class="section-label">Why We Exist</div>
+        <h2 style="margin-top:12px;">Engineering for Humanity</h2>
+        <p style="color:var(--text-muted);line-height:1.8;margin-top:20px;">
+          Engineers Without Borders at Cornell (EWB-Cornell) is a student organization dedicated to developing engineering solutions in partnership with disadvantaged communities. We believe that engineering skills can and should be used to address humanitarian challenges.
+        </p>
+        <p style="color:var(--text-muted);line-height:1.8;margin-top:16px;">
+          Founded at Cornell's College of Engineering, we bring together students from all disciplines — civil, environmental, mechanical, software, and more — to work on real projects that create lasting impact.
+        </p>
+      </div>
+
+      <!-- Right: Stats box -->
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:36px;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;">
+          <div style="text-align:center;">
+            <div style="font-size:2.4rem;font-weight:800;color:var(--green);line-height:1;">2018</div>
+            <div style="font-size:0.82rem;color:var(--text-muted);margin-top:8px;text-transform:uppercase;letter-spacing:0.08em;font-weight:600;">Founded</div>
+          </div>
+          <div style="text-align:center;">
+            <div style="font-size:2.4rem;font-weight:800;color:var(--blue);line-height:1;">50+</div>
+            <div style="font-size:0.82rem;color:var(--text-muted);margin-top:8px;text-transform:uppercase;letter-spacing:0.08em;font-weight:600;">Members</div>
+          </div>
+          <div style="text-align:center;">
+            <div style="font-size:2.4rem;font-weight:800;color:var(--orange);line-height:1;">2+</div>
+            <div style="font-size:0.82rem;color:var(--text-muted);margin-top:8px;text-transform:uppercase;letter-spacing:0.08em;font-weight:600;">Countries</div>
+          </div>
+          <div style="text-align:center;">
+            <div style="font-size:2.4rem;font-weight:800;color:var(--teal);line-height:1;">4+</div>
+            <div style="font-size:0.82rem;color:var(--text-muted);margin-top:8px;text-transform:uppercase;letter-spacing:0.08em;font-weight:600;">Projects</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2: VALUES -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head" style="text-align:center;">
+      <div class="section-label">What Guides Us</div>
+      <h2 style="margin-top:12px;">Our Values</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px;">
+
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:32px;">
+        <div style="font-size:2rem;margin-bottom:16px;">🌱</div>
+        <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:12px;">Community Partnership</h3>
+        <p style="color:var(--text-muted);line-height:1.7;font-size:0.95rem;">We work WITH communities, not for them. Every project begins with listening and understanding local needs, knowledge, and priorities.</p>
+      </div>
+
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:32px;">
+        <div style="font-size:2rem;margin-bottom:16px;">⚙️</div>
+        <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:12px;">Engineering Excellence</h3>
+        <p style="color:var(--text-muted);line-height:1.7;font-size:0.95rem;">We hold ourselves to the highest technical standards, ensuring our solutions are safe, durable, and appropriate for local conditions.</p>
+      </div>
+
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:32px;">
+        <div style="font-size:2rem;margin-bottom:16px;">🌍</div>
+        <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:12px;">Sustainability</h3>
+        <p style="color:var(--text-muted);line-height:1.7;font-size:0.95rem;">Every solution we design considers long-term sustainability — environmental, social, and economic — so our impact endures beyond our involvement.</p>
+      </div>
+
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:32px;">
+        <div style="font-size:2rem;margin-bottom:16px;">🎓</div>
+        <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:12px;">Student Development</h3>
+        <p style="color:var(--text-muted);line-height:1.7;font-size:0.95rem;">We develop the next generation of humanitarian engineers through hands-on project experience, mentorship, and professional growth.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: HISTORY TIMELINE -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label">Our Story</div>
+      <h2 style="margin-top:12px;">History &amp; Milestones</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:48px;align-items:start;">
+
+      <!-- Left: Timeline -->
+      <div>
+
+        <div style="display:flex;gap:24px;padding-bottom:36px;">
+          <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;">
+            <div style="width:46px;height:46px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.7rem;color:#000;flex-shrink:0;">2018</div>
+            <div style="width:2px;flex:1;background:var(--border);margin-top:8px;min-height:40px;"></div>
+          </div>
+          <div style="padding-top:10px;">
+            <div style="font-weight:700;font-size:1rem;margin-bottom:6px;">Founded</div>
+            <p style="color:var(--text-muted);font-size:0.9rem;line-height:1.65;">EWB-Cornell was established by a group of passionate engineering students committed to applying their skills to humanitarian challenges.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:24px;padding-bottom:36px;">
+          <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;">
+            <div style="width:46px;height:46px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.7rem;color:#fff;flex-shrink:0;">2019</div>
+            <div style="width:2px;flex:1;background:var(--border);margin-top:8px;min-height:40px;"></div>
+          </div>
+          <div style="padding-top:10px;">
+            <div style="font-weight:700;font-size:1rem;margin-bottom:6px;">First International Project</div>
+            <p style="color:var(--text-muted);font-size:0.9rem;line-height:1.65;">Launched our first international project in Bolivia, partnering with a rural community on water system design.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:24px;padding-bottom:36px;">
+          <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;">
+            <div style="width:46px;height:46px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.7rem;color:#000;flex-shrink:0;">2021</div>
+            <div style="width:2px;flex:1;background:var(--border);margin-top:8px;min-height:40px;"></div>
+          </div>
+          <div style="padding-top:10px;">
+            <div style="font-weight:700;font-size:1rem;margin-bottom:6px;">Tanzania Initiative</div>
+            <p style="color:var(--text-muted);font-size:0.9rem;line-height:1.65;">Expanded to East Africa with a solar irrigation project in Tanzania, successfully completed in 2023.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:24px;padding-bottom:36px;">
+          <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;">
+            <div style="width:46px;height:46px;border-radius:50%;background:var(--orange);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.7rem;color:#fff;flex-shrink:0;">2022</div>
+            <div style="width:2px;flex:1;background:var(--border);margin-top:8px;min-height:40px;"></div>
+          </div>
+          <div style="padding-top:10px;">
+            <div style="font-weight:700;font-size:1rem;margin-bottom:6px;">Digital Agriculture</div>
+            <p style="color:var(--text-muted);font-size:0.9rem;line-height:1.65;">Launched our Digital Agriculture team, pioneering the use of UAVs and AI for crop disease detection.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:24px;">
+          <div style="flex-shrink:0;">
+            <div style="width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--green),var(--teal));display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.7rem;color:#000;">2024</div>
+          </div>
+          <div style="padding-top:10px;">
+            <div style="font-weight:700;font-size:1rem;margin-bottom:6px;">$60K Milestone</div>
+            <p style="color:var(--text-muted);font-size:0.9rem;line-height:1.65;">Surpassed $60,000 in fundraising, enabling expanded project scope and member travel for site assessments.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right: Decorative card -->
+      <div style="background:linear-gradient(145deg,var(--surface) 0%,var(--bg-alt) 100%);border:1px solid var(--border);border-radius:var(--radius-lg);padding:40px;position:sticky;top:120px;">
+        <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--green);font-weight:700;margin-bottom:20px;">Our Chapter Mission</div>
+        <p style="font-size:1.1rem;line-height:1.85;color:var(--text);font-style:italic;margin-bottom:32px;">
+          "To develop internationally responsible engineers while partnering with communities to implement sustainable engineering solutions."
+        </p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;border-top:1px solid var(--border);padding-top:28px;">
+          <div style="text-align:center;">
+            <div style="font-size:1.8rem;font-weight:800;color:var(--green);">$60K+</div>
+            <div style="font-size:0.8rem;color:var(--text-muted);margin-top:4px;">Funds Raised</div>
+          </div>
+          <div style="text-align:center;">
+            <div style="font-size:1.8rem;font-weight:800;color:var(--blue);">50+</div>
+            <div style="font-size:0.8rem;color:var(--text-muted);margin-top:4px;">Active Members</div>
+          </div>
+          <div style="text-align:center;">
+            <div style="font-size:1.8rem;font-weight:800;color:var(--orange);">4+</div>
+            <div style="font-size:0.8rem;color:var(--text-muted);margin-top:4px;">Live Projects</div>
+          </div>
+          <div style="text-align:center;">
+            <div style="font-size:1.8rem;font-weight:800;color:var(--teal);">5</div>
+            <div style="font-size:0.8rem;color:var(--text-muted);margin-top:4px;">Teams</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: LEADERSHIP CTA -->
+<section class="cta-band">
+  <div class="container" style="text-align:center;">
+    <div class="section-label" style="margin-bottom:16px;">Get Involved</div>
+    <h2 style="font-size:2rem;margin-bottom:16px;">Meet the people behind the work.</h2>
+    <p style="color:var(--text-muted);max-width:480px;margin:0 auto 36px;line-height:1.7;">Our teams are made up of dedicated Cornell students passionate about engineering and global impact. Come see what we're building.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+      <a href="/pages/teams.html" class="btn btn-primary">View Teams →</a>
+      <a href="/pages/apply.html" class="btn btn-outline">Apply Now</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer"><div class="container">
+  <div class="footer-grid">
+    <div class="footer-brand"><a href="/" class="footer-logo"><div class="nav-logo-mark">E</div>EWB Cornell</a><p>Engineers Without Borders at Cornell University.</p>
+        <div class="social-links" style="margin-top:16px;">
+          <a href="https://www.instagram.com/ewbcornell/" class="social-link" target="_blank" rel="noopener" aria-label="Instagram @ewbcornell">
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/ewb-cornell/" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn EWB Cornell">
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+        </div>
+    </div>
+    <div class="footer-col"><h4>Navigate</h4><ul>
+      <li><a href="/pages/about.html">About</a></li><li><a href="/pages/teams.html">Teams</a></li>
+      <li><a href="/pages/projects.html">Projects</a></li><li><a href="/pages/apply.html">Apply</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Teams</h4><ul>
+      <li><a href="/pages/teams-international.html">International</a></li>
+      <li><a href="/pages/teams-domestic.html">Domestic</a></li>
+      <li><a href="/pages/teams-digital-agriculture.html">Digital Agriculture</a></li>
+      <li><a href="/pages/teams-software.html">Software</a></li>
+      <li><a href="/pages/teams-business.html">Business</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Contact</h4>
+      <div class="footer-contact-item"><span>📧</span><a href="mailto:ewb@cornell.edu">ewb@cornell.edu</a></div>
+      <div class="footer-contact-item"><span>📍</span><span>Cornell University, Ithaca NY</span></div>
+    </div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 EWB Cornell.</span></div>
+</div></footer>
+
+<script src="../js/script.js"></script>
 </body>
 </html>

@@ -1,11 +1,498 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <title>Sponsors | EWB Cornell</title>
-    <link rel="stylesheet" href="../css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sponsors — EWB Cornell</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <script>(function(){var t=localStorage.getItem('ewb-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
+  <style>
+    /* Tier cards */
+    .tier-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    }
+    .tier-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+    .tier-top { height: 5px; }
+    .tier-gold-bar   { background: linear-gradient(90deg, #fbbf24, #f59e0b); }
+    .tier-silver-bar { background: linear-gradient(90deg, #94a3b8, #64748b); }
+    .tier-bronze-bar { background: linear-gradient(90deg, #b45309, #92400e); }
+    .tier-body { padding: 36px 32px; }
+    .tier-body .tier-icon { font-size: 2.6rem; margin-bottom: 14px; display: block; }
+    .tier-body h3 { font-size: 1.2rem; font-weight: 800; margin-bottom: 4px; }
+    .tier-body .tier-amount { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px; font-weight: 600; }
+    .tier-benefits { list-style: none; padding: 0; }
+    .tier-benefits li {
+      display: flex; align-items: flex-start; gap: 10px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.87rem;
+      color: var(--text-muted);
+    }
+    .tier-benefits li:last-child { border-bottom: none; }
+    .tier-benefits li::before {
+      content: '✓';
+      color: var(--green);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* Impact stats row */
+    .impact-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .impact-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px 24px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+    .impact-num { font-size: 2.4rem; font-weight: 800; color: var(--orange); line-height: 1; margin-bottom: 8px; }
+    [data-theme="dark"] .impact-num:nth-child(odd) { color: var(--green); }
+    .impact-label { font-size: 0.9rem; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+    .impact-desc { font-size: 0.78rem; color: var(--text-muted); }
+
+    /* Sponsor logo grid */
+    .sponsor-logo-slot {
+      height: 84px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      padding: 0 16px;
+      text-align: center;
+      transition: border-color 0.25s ease, box-shadow 0.25s ease !important;
+    }
+    .sponsor-logo-slot:hover {
+      border-color: var(--green);
+      box-shadow: var(--glow-green);
+    }
+
+    /* Donate band */
+    .donate-band {
+      background: linear-gradient(140deg, #040a1e 0%, #071530 100%);
+      border-radius: var(--radius-lg);
+      padding: 64px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(96,165,250,0.1);
+    }
+    [data-theme="light"] .donate-band {
+      background: linear-gradient(140deg, #1e4229, #0c2a3d);
+      border-color: rgba(255,255,255,0.1);
+    }
+    .donate-band::before {
+      content: ''; position: absolute; inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+    .donate-amounts {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin: 28px 0;
+      position: relative;
+    }
+    .donate-btn {
+      padding: 12px 28px;
+      border-radius: 50px;
+      border: 1.5px solid rgba(255,255,255,0.25);
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      font-family: var(--font);
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease !important;
+    }
+    .donate-btn:hover, .donate-btn.active {
+      background: var(--orange);
+      border-color: var(--orange);
+      transform: scale(1.06);
+    }
+    .donate-custom {
+      display: flex; align-items: center; gap: 0;
+      border: 1.5px solid rgba(255,255,255,0.25);
+      border-radius: 50px;
+      overflow: hidden;
+      position: relative;
+    }
+    .donate-custom-prefix {
+      padding: 12px 14px 12px 20px;
+      background: rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.6);
+      font-size: 1rem;
+      font-weight: 700;
+    }
+    .donate-custom-input {
+      background: rgba(255,255,255,0.08);
+      border: none;
+      padding: 12px 20px 12px 0;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 700;
+      width: 120px;
+    }
+    .donate-custom-input::placeholder { color: rgba(255,255,255,0.35); }
+    .donate-custom-input:focus { outline: none; }
+    .donate-note { font-size: 0.8rem; color: rgba(255,255,255,0.45); position: relative; line-height: 1.6; }
+
+    /* Contact section */
+    .sponsor-contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    @media (max-width: 1024px) {
+      .impact-row { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .impact-row { grid-template-columns: repeat(2, 1fr); }
+      .donate-band { padding: 40px 24px; }
+      .sponsor-contact-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
-    <h1>Sponsors</h1>
+
+<nav class="nav" id="mainNav"><div class="container"><div class="nav-inner">
+  <a href="/" class="nav-logo"><div class="nav-logo-mark">E</div>EWB Cornell</a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="/pages/about.html">About</a></li>
+      <li><a href="/pages/teams.html">Teams</a></li>
+      <li><a href="/pages/projects.html">Projects</a></li>
+      <li><a href="/pages/gallery.html">Gallery</a></li>
+      <li><a href="/pages/sponsors.html" class="active">Sponsors</a></li>
+      <li><a href="/pages/apply.html" class="nav-cta">Apply Now</a></li>
+    </ul>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">☀️</button>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</div></div></nav>
+<div class="mobile-backdrop" id="mobileBackdrop"></div>
+<nav class="mobile-menu" id="mobileMenu">
+  <a href="/pages/about.html">About</a>
+  <a href="/pages/teams.html">Teams</a>
+  <a href="/pages/projects.html">Projects</a>
+  <a href="/pages/gallery.html">Gallery</a>
+  <a href="/pages/sponsors.html">Sponsors</a>
+  <div class="mobile-theme-row"><span>Theme</span><button class="theme-toggle" onclick="toggleTheme()">☀️</button></div>
+  <a href="/pages/apply.html" class="mobile-cta">Apply Now →</a>
+</nav>
+
+<header class="page-hero">
+  <div class="container">
+    <a href="/" class="page-hero-back">← Home</a>
+    <span class="page-hero-tag">Support Our Work</span>
+    <h1>Sponsors &amp; <em>Partners</em></h1>
+    <p class="page-hero-sub">Help us engineer a better world. Your support directly funds water systems, sustainable housing, and technology that changes lives.</p>
+    <div class="page-hero-stats">
+      <div class="page-hero-stat"><strong>$60K+</strong><span>Raised</span></div>
+      <div class="page-hero-stat"><strong>10+</strong><span>Partners</span></div>
+      <div class="page-hero-stat"><strong>4</strong><span>Projects Funded</span></div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- IMPACT NUMBERS -->
+<section class="section section-alt" aria-labelledby="impactTitle">
+  <div class="container">
+    <div class="section-head center fade-up">
+      <span class="section-label">Our Impact</span>
+      <h2 class="section-title" id="impactTitle">Your Investment at Work</h2>
+      <p class="section-subtitle">Every dollar goes directly to engineering projects and the communities we serve.</p>
+    </div>
+    <div class="impact-row">
+      <div class="impact-item fade-up" data-delay="0">
+        <div class="impact-num">$60K+</div>
+        <div class="impact-label">Total Raised</div>
+        <div class="impact-desc">Through all campaigns, grants &amp; sponsors</div>
+      </div>
+      <div class="impact-item fade-up" data-delay="80">
+        <div class="impact-num">4</div>
+        <div class="impact-label">Projects Funded</div>
+        <div class="impact-desc">Across USA, Bolivia &amp; Tanzania</div>
+      </div>
+      <div class="impact-item fade-up" data-delay="160">
+        <div class="impact-num">200+</div>
+        <div class="impact-label">Lives Improved</div>
+        <div class="impact-desc">Through completed infrastructure</div>
+      </div>
+      <div class="impact-item fade-up" data-delay="240">
+        <div class="impact-num">100%</div>
+        <div class="impact-label">Directly to Projects</div>
+        <div class="impact-desc">All donations fund engineering work</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPONSORSHIP TIERS -->
+<section class="section" aria-labelledby="tiersTitle">
+  <div class="container">
+    <div class="section-head center fade-up">
+      <span class="section-label">Sponsorship</span>
+      <h2 class="section-title" id="tiersTitle">Partnership Tiers</h2>
+      <p class="section-subtitle">Join our mission as an organizational partner and gain meaningful recognition while funding humanitarian engineering.</p>
+    </div>
+    <div class="grid-3" style="gap:24px;">
+
+      <div class="tier-card fade-up" data-delay="0">
+        <div class="tier-top tier-gold-bar"></div>
+        <div class="tier-body">
+          <span class="tier-icon">🥇</span>
+          <h3>Gold Sponsor</h3>
+          <p class="tier-amount">$5,000+ annually</p>
+          <ul class="tier-benefits">
+            <li>Logo featured on website &amp; all print materials</li>
+            <li>Dedicated social media spotlight post</li>
+            <li>Annual impact report with named attribution</li>
+            <li>Presentation slot at a team meeting</li>
+            <li>Project site visit invitation</li>
+            <li>Named project sponsorship opportunity</li>
+            <li>Direct access to our student talent network</li>
+          </ul>
+          <a href="mailto:ewb@cornell.edu?subject=Gold%20Sponsorship%20Inquiry" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:28px;">Become a Gold Sponsor →</a>
+        </div>
+      </div>
+
+      <div class="tier-card fade-up" data-delay="100">
+        <div class="tier-top tier-silver-bar"></div>
+        <div class="tier-body">
+          <span class="tier-icon">🥈</span>
+          <h3>Silver Sponsor</h3>
+          <p class="tier-amount">$2,000–$4,999 annually</p>
+          <ul class="tier-benefits">
+            <li>Logo on website sponsors page</li>
+            <li>Social media mention post</li>
+            <li>Annual impact report with attribution</li>
+            <li>Project progress updates</li>
+            <li>Access to student recruitment events</li>
+          </ul>
+          <a href="mailto:ewb@cornell.edu?subject=Silver%20Sponsorship%20Inquiry" class="btn btn-outline" style="width:100%;justify-content:center;margin-top:28px;">Become a Silver Sponsor →</a>
+        </div>
+      </div>
+
+      <div class="tier-card fade-up" data-delay="200">
+        <div class="tier-top tier-bronze-bar"></div>
+        <div class="tier-body">
+          <span class="tier-icon">🥉</span>
+          <h3>Bronze Sponsor</h3>
+          <p class="tier-amount">$500–$1,999 annually</p>
+          <ul class="tier-benefits">
+            <li>Name listed on website sponsors page</li>
+            <li>Annual impact report with attribution</li>
+            <li>Project progress newsletter</li>
+          </ul>
+          <a href="mailto:ewb@cornell.edu?subject=Bronze%20Sponsorship%20Inquiry" class="btn btn-surface" style="width:100%;justify-content:center;margin-top:28px;">Become a Bronze Sponsor →</a>
+        </div>
+      </div>
+
+    </div>
+    <p style="text-align:center;margin-top:28px;font-size:0.86rem;color:var(--text-muted);">Custom partnership arrangements available. <a href="mailto:ewb@cornell.edu" style="color:var(--green);font-weight:600;">Contact us</a> to discuss.</p>
+  </div>
+</section>
+
+<!-- CURRENT SPONSORS -->
+<section class="section section-alt" aria-labelledby="currentTitle">
+  <div class="container">
+    <div class="section-head center fade-up">
+      <span class="section-label">Thank You</span>
+      <h2 class="section-title" id="currentTitle">Current Supporters</h2>
+      <p class="section-subtitle">We are grateful to the organizations and individuals who make our work possible.</p>
+    </div>
+
+    <div class="sponsor-tier fade-up" style="margin-bottom:24px;">
+      <div class="sponsor-tier-header">
+        <span class="sponsor-tier-badge tier-gold">🥇 Gold Partners</span>
+      </div>
+      <div class="sponsor-logo-grid" style="grid-template-columns:repeat(3,1fr);">
+        <div class="sponsor-logo-slot">Cornell Engineering<br><span style="font-size:0.7rem;font-weight:400;">College of Engineering</span></div>
+        <div class="sponsor-logo-slot">Engineering Learning<br><span style="font-size:0.7rem;font-weight:400;">Initiatives — Cornell</span></div>
+        <div class="sponsor-logo-slot">EWB-USA<br><span style="font-size:0.7rem;font-weight:400;">National Chapter</span></div>
+      </div>
+    </div>
+
+    <div class="sponsor-tier fade-up" data-delay="80" style="margin-bottom:24px;">
+      <div class="sponsor-tier-header">
+        <span class="sponsor-tier-badge tier-silver">🥈 Silver Partners</span>
+      </div>
+      <div class="sponsor-logo-grid" style="grid-template-columns:repeat(4,1fr);">
+        <div class="sponsor-logo-slot">Cornell<br><span style="font-size:0.7rem;font-weight:400;">Student Assembly</span></div>
+        <div class="sponsor-logo-slot">Class of 2024<br><span style="font-size:0.7rem;font-weight:400;">Class Gift Fund</span></div>
+        <div class="sponsor-logo-slot" style="opacity:0.4;font-style:italic;font-weight:400;font-size:0.78rem;">Your Name Here</div>
+        <div class="sponsor-logo-slot" style="opacity:0.4;font-style:italic;font-weight:400;font-size:0.78rem;">Your Name Here</div>
+      </div>
+    </div>
+
+    <div class="sponsor-tier fade-up" data-delay="160">
+      <div class="sponsor-tier-header">
+        <span class="sponsor-tier-badge tier-bronze">🥉 Bronze &amp; Community</span>
+      </div>
+      <div class="sponsor-logo-grid">
+        <div class="sponsor-logo-slot">Ithaca Community<br><span style="font-size:0.7rem;font-weight:400;">Foundation</span></div>
+        <div class="sponsor-logo-slot">Cornell<br><span style="font-size:0.7rem;font-weight:400;">Giving Day</span></div>
+        <div class="sponsor-logo-slot" style="opacity:0.4;font-style:italic;font-weight:400;font-size:0.78rem;">+ Individual donors</div>
+        <div class="sponsor-logo-slot" style="opacity:0.4;font-style:italic;font-weight:400;font-size:0.78rem;">Your Name Here</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DONATE SECTION -->
+<section class="section" aria-labelledby="donateTitle">
+  <div class="container">
+    <div class="donate-band fade-up">
+      <span class="section-label" style="color:rgba(255,255,255,0.5);">Make a Difference</span>
+      <h2 class="section-title" id="donateTitle" style="color:#fff;max-width:520px;margin:0 auto 12px;">Support Our Work Directly</h2>
+      <p style="color:rgba(255,255,255,0.6);max-width:480px;margin:0 auto 8px;font-size:0.95rem;line-height:1.7;">Can't commit to a full sponsorship? Individual donations of any size help fund our engineering projects and send students to project sites.</p>
+      <div class="donate-amounts" role="group" aria-label="Donation amounts">
+        <button class="donate-btn" onclick="selectAmount(this,'25')">$25</button>
+        <button class="donate-btn" onclick="selectAmount(this,'50')">$50</button>
+        <button class="donate-btn active" onclick="selectAmount(this,'100')">$100</button>
+        <button class="donate-btn" onclick="selectAmount(this,'250')">$250</button>
+        <div class="donate-custom">
+          <span class="donate-custom-prefix">$</span>
+          <input class="donate-custom-input" type="number" id="customAmount" placeholder="Custom" min="1" aria-label="Custom donation amount">
+        </div>
+      </div>
+      <a href="https://giving.cornell.edu" class="btn btn-primary" style="margin:0 auto 20px;display:inline-flex;" target="_blank" rel="noopener">
+        Donate via Cornell Giving
+        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+      <p class="donate-note">EWB Cornell is a registered Cornell student organization. Donations processed through Cornell's official giving platform may be tax-deductible. Contact us about alternative giving options.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT / SPONSOR INQUIRY -->
+<section class="section section-alt" aria-labelledby="contactTitle">
+  <div class="container">
+    <div class="sponsor-contact-grid">
+      <div class="fade-up">
+        <span class="section-label">Get in Touch</span>
+        <h2 class="section-title" id="contactTitle">Become a Sponsor</h2>
+        <p style="color:var(--text-muted);line-height:1.75;margin-bottom:24px;">We'd love to discuss how a partnership with EWB Cornell can benefit your organization while creating lasting impact. Reach out to start the conversation.</p>
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <div style="display:flex;align-items:center;gap:14px;padding:16px 20px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);">
+            <span style="font-size:1.3rem;">📧</span>
+            <div>
+              <div style="font-size:0.8rem;color:var(--text-muted);margin-bottom:2px;">Email</div>
+              <a href="mailto:ewb@cornell.edu" style="font-weight:600;color:var(--text);">ewb@cornell.edu</a>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:14px;padding:16px 20px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);">
+            <span style="font-size:1.3rem;">📍</span>
+            <div>
+              <div style="font-size:0.8rem;color:var(--text-muted);margin-bottom:2px;">Location</div>
+              <span style="font-weight:600;color:var(--text);">Cornell University, Ithaca NY 14853</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fade-up" data-delay="100">
+        <form class="apply-form" onsubmit="handleSponsorInquiry(event)" aria-label="Sponsor inquiry form">
+          <div class="form-group">
+            <label for="sName" style="font-size:0.84rem;font-weight:600;color:var(--text-muted);margin-bottom:8px;display:block;">Your Name</label>
+            <input class="form-input" id="sName" type="text" placeholder="Full Name" required>
+          </div>
+          <div class="form-group">
+            <label for="sOrg" style="font-size:0.84rem;font-weight:600;color:var(--text-muted);margin-bottom:8px;display:block;">Organization</label>
+            <input class="form-input" id="sOrg" type="text" placeholder="Company / Organization" required>
+          </div>
+          <div class="form-group">
+            <label for="sEmail" style="font-size:0.84rem;font-weight:600;color:var(--text-muted);margin-bottom:8px;display:block;">Email</label>
+            <input class="form-input" id="sEmail" type="email" placeholder="your@email.com" required>
+          </div>
+          <div class="form-group">
+            <label for="sMessage" style="font-size:0.84rem;font-weight:600;color:var(--text-muted);margin-bottom:8px;display:block;">Message</label>
+            <textarea class="form-textarea" id="sMessage" placeholder="Tell us about your interest in sponsoring EWB Cornell — tier, specific projects, or any questions." rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Send Inquiry →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer"><div class="container">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="/" class="footer-logo"><div class="nav-logo-mark">E</div>EWB Cornell</a>
+      <p>Engineers Without Borders at Cornell University — applying engineering skills to create sustainable change for communities worldwide.</p>
+      <div class="social-links" style="margin-top:16px;">
+        <a href="https://www.instagram.com/ewbcornell/" class="social-link" target="_blank" rel="noopener" aria-label="Instagram @ewbcornell">
+          <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/ewb-cornell/" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn EWB Cornell">
+          <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col"><h4>Navigate</h4><ul>
+      <li><a href="/pages/about.html">About</a></li>
+      <li><a href="/pages/teams.html">Teams</a></li>
+      <li><a href="/pages/projects.html">Projects</a></li>
+      <li><a href="/pages/apply.html">Apply</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Teams</h4><ul>
+      <li><a href="/pages/teams-international.html">International</a></li>
+      <li><a href="/pages/teams-domestic.html">Domestic</a></li>
+      <li><a href="/pages/teams-digital-agriculture.html">Digital Agriculture</a></li>
+      <li><a href="/pages/teams-software.html">Software</a></li>
+      <li><a href="/pages/teams-business.html">Business</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Contact</h4>
+      <div class="footer-contact-item"><span>📧</span><a href="mailto:ewb@cornell.edu">ewb@cornell.edu</a></div>
+      <div class="footer-contact-item"><span>📍</span><span>Cornell University<br>Ithaca, NY 14853</span></div>
+      <div class="footer-contact-item"><span>🎓</span><span>College of Engineering</span></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Engineers Without Borders at Cornell. All rights reserved.</span>
+    <div class="footer-bottom-links"><a href="#">Privacy</a><a href="#">Terms</a></div>
+  </div>
+</div></footer>
+
+<script src="../js/script.js"></script>
+<script>
+  function selectAmount(btn, val) {
+    document.querySelectorAll('.donate-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('customAmount').value = '';
+  }
+  window.handleSponsorInquiry = function(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button[type="submit"]');
+    const orig = btn.textContent;
+    btn.textContent = '✓ Message Sent!';
+    btn.style.background = 'var(--teal)';
+    btn.disabled = true;
+    setTimeout(() => { btn.textContent = orig; btn.style.background = ''; btn.disabled = false; }, 3500);
+  };
+</script>
 </body>
 </html>

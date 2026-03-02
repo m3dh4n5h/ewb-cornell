@@ -1,11 +1,326 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <title>Teams | EWB Cornell</title>
-    <link rel="stylesheet" href="../css/style.css">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Teams — EWB Cornell</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <script>(function(){var t=localStorage.getItem('ewb-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
 </head>
 <body>
-    <h1>Our Teams</h1>
-</body>
-</html>
+<nav class="nav" id="mainNav"><div class="container"><div class="nav-inner">
+  <a href="/" class="nav-logo"><div class="nav-logo-mark">E</div>EWB Cornell</a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="/pages/about.html">About</a></li>
+      <li><a href="/pages/teams.html" class="active">Teams</a></li>
+      <li><a href="/pages/projects.html">Projects</a></li>
+      <li><a href="/pages/gallery.html">Gallery</a></li>
+      <li><a href="/pages/sponsors.html">Sponsors</a></li>
+      <li><a href="/pages/apply.html" class="nav-cta">Apply Now</a></li>
+    </ul>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">☀️</button>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</div></div></nav>
+<div class="mobile-backdrop" id="mobileBackdrop"></div>
+<nav class="mobile-menu" id="mobileMenu">
+  <a href="/pages/about.html">About</a><a href="/pages/teams.html">Teams</a>
+  <a href="/pages/projects.html">Projects</a><a href="/pages/gallery.html">Gallery</a><a href="/pages/sponsors.html">Sponsors</a>
+  <div class="mobile-theme-row"><span>Theme</span><button class="theme-toggle" onclick="toggleTheme()">☀️</button></div>
+  <a href="/pages/apply.html" class="mobile-cta">Apply Now →</a>
+</nav>
+
+<header class="page-hero">
+  <div class="container">
+    <a href="/" class="page-hero-back">← Home</a>
+    <span class="page-hero-tag">EWB Cornell</span>
+    <h1>Our <em>Teams</em></h1>
+    <p class="page-hero-sub">Five specialized teams united by one mission — designing sustainable solutions for communities worldwide.</p>
+    <div class="page-hero-stats">
+      <div class="page-hero-stat"><strong>5</strong><span>Teams</span></div>
+      <div class="page-hero-stat"><strong>36+</strong><span>Members</span></div>
+      <div class="page-hero-stat"><strong>4</strong><span>Active Projects</span></div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- EXECUTIVE BOARD & LEADS -->
+<section class="section section-alt">
+  <div class="container">
+
+    <div class="section-head" style="margin-bottom:36px;">
+      <div class="section-label">Leadership</div>
+      <h2 style="margin-top:8px;">Executive Board</h2>
+      <p style="color:var(--text-muted);font-size:0.9rem;margin-top:10px;">Click any card to learn more. Names shown as initials for privacy.</p>
+    </div>
+    <div class="members-grid" style="grid-template-columns:repeat(3,1fr);max-width:680px;">
+      <div class="member-card" onclick="openMemberModal({name:'S.G.',initials:'SG',role:'President',major:'Biomedical Engineering',year:'Class of 2027',hometown:'',involvements:'EWB Cornell Executive Board, International Team',interests:'Global health, water-borne disease prevention',about:'S.G. serves as President of EWB Cornell, overseeing all chapter operations, external partnerships, and strategic direction. She also contributes to the International Team.',netid:''})">
+        <div class="member-avatar">SG</div>
+        <div class="member-name">S.G.</div>
+        <div class="member-role">President</div>
+        <div class="member-major">Biomedical Engineering<br>Class of 2027</div>
+        <div class="member-linkedin-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</div>
+      </div>
+      <div class="member-card" onclick="openMemberModal({name:'L.B.',initials:'LB',role:'Treasurer',major:'Computer Science',year:'Class of 2028',hometown:'',involvements:'EWB Cornell Executive Board',interests:'Finance, operations, tech',about:'L.B. serves as Treasurer of EWB Cornell, managing the chapter budget, fundraising operations, and financial reporting for all project teams.',netid:''})">
+        <div class="member-avatar">LB</div>
+        <div class="member-name">L.B.</div>
+        <div class="member-role">Treasurer</div>
+        <div class="member-major">Computer Science<br>Class of 2028</div>
+        <div class="member-linkedin-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</div>
+      </div>
+      <div class="member-card" onclick="openMemberModal({name:'G.P.',initials:'GP',role:'Engineering Representative',major:'Civil Engineering',year:'Class of 2027',hometown:'',involvements:'EWB Cornell Executive Board',interests:'Infrastructure, structural engineering',about:'G.P. serves as the Engineering Representative on the EWB Cornell Executive Board, coordinating technical standards and engineering review across all project teams.',netid:''})">
+        <div class="member-avatar">GP</div>
+        <div class="member-name">G.P.</div>
+        <div class="member-role">Engineering Rep</div>
+        <div class="member-major">Civil Engineering<br>Class of 2027</div>
+        <div class="member-linkedin-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</div>
+      </div>
+    </div>
+
+    <div class="section-head" style="margin-top:56px;margin-bottom:36px;">
+      <div class="section-label">Teams</div>
+      <h2 style="margin-top:8px;">Team Leads</h2>
+    </div>
+    <div class="members-grid">
+      <div class="member-card" onclick="openMemberModal({name:'E.S.',initials:'ES',role:'International Co-Lead',major:'Chemical Engineering',year:'Class of 2028',hometown:'',involvements:'EWB Cornell International Lead, AIChE, Cornell Design League',interests:'Water treatment, environmental policy, hiking',about:'E.S. leads the Bolivia water project, coordinating with FIEA Bolivia and managing project engineering. Passionate about sustainable water infrastructure and community-driven development.',netid:''})">
+        <div class="member-avatar">ES</div>
+        <div class="member-name">E.S.</div>
+        <div class="member-role">International Co-Lead</div>
+        <div class="member-major">Chemical Engineering<br>Class of 2028</div>
+        <div class="member-linkedin-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</div>
+      </div>
+      <div class="member-card" onclick="openMemberModal({name:'J.R.',initials:'JR',role:'International Co-Lead',major:'Civil Engineering',year:'Class of 2028',hometown:'',involvements:'EWB Cornell International Lead, ASCE, Tau Beta Pi',interests:'Infrastructure design, community development',about:'J.R. co-leads the International Team\'s Bolivia water sanitation project. Manages structural and civil engineering design and coordinates site assessment trips.',netid:''})">
+        <div class="member-avatar">JR</div>
+        <div class="member-name">J.R.</div>
+        <div class="member-role">International Co-Lead</div>
+        <div class="member-major">Civil Engineering<br>Class of 2028</div>
+        <div class="member-linkedin-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</div>
+      </div>
+      <div class="member-card" onclick="openMemberModal({name:'J.S.',initials:'JS',role:'Domestic Co-Lead',major:'Environmental Engineering',year:'Class of 2027',hometown:'',involvements:'EWB Cornell Domestic Lead',interests:'Environmental engineering, humanitarian work',about:'J.S. co-leads the Domestic Team overseeing the Austin Festival Beach Garden and Pine Ridge Housing projects.',netid:''})">
+        <div class="member-avatar">JS</div>
+        <div class="member-name">J.S.</div>
+        <div class="member-role">Domestic Co-Lead</div>
+        <div class="member-major">Environmental Engineering<br>Class of 2027</div>
+        <div class="member-linkedin-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</div>
+      </div>
+      <div class="member-card" onclick="openMemberModal({name:'A.P.',initials:'AP',role:'Domestic Co-Lead',major:'Biological Engineering',year:'Class of 2028',hometown:'',involvements:'EWB Cornell Domestic Lead',interests:'Biological engineering, sustainability',about:'A.P. co-leads the Domestic Team alongside J.S., coordinating engineering design and community partnerships for domestic humanitarian projects.',netid:''})">
+        <div class="member-avatar">AP</div>
+        <div class="member-name">A.P.</div>
+        <div class="member-role">Domestic Co-Lead</div>
+        <div class="member-major">Biological Engineering<br>Class of 2028</div>
+        <div class="member-linkedin-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</div>
+      </div>
+      <div class="member-card" onclick="openMemberModal({name:'J.K.',initials:'JK',role:'Digital Agriculture Lead',major:'Computer Science',year:'Class of 2027',hometown:'',involvements:'EWB Cornell Digital Agriculture Lead',interests:'AI/ML, agricultural technology',about:'J.K. leads the Digital Agriculture Team, directing the development of UAV/UGV systems for crop disease detection in Sub-Saharan Africa.',netid:''})">
+        <div class="member-avatar">JK</div>
+        <div class="member-name">J.K.</div>
+        <div class="member-role">Digital Agriculture Lead</div>
+        <div class="member-major">Computer Science<br>Class of 2027</div>
+        <div class="member-linkedin-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</div>
+      </div>
+      <div class="member-card" onclick="openMemberModal({name:'A.P.',initials:'AP',role:'Software Lead',major:'Computer Science',year:'Class of 2026',hometown:'',involvements:'EWB Cornell Software Lead, Cornell AppDev',interests:'iOS development, HCI, tech for social good',about:'A.P. leads the Software Development team, overseeing the Cornell Wardrobe App and the Climate Fund App — both mobile apps promoting sustainability.',netid:''})">
+        <div class="member-avatar">AP</div>
+        <div class="member-name">A.P.</div>
+        <div class="member-role">Software Lead</div>
+        <div class="member-major">Computer Science<br>Class of 2026</div>
+        <div class="member-linkedin-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</div>
+      </div>
+      <div class="member-card" onclick="openMemberModal({name:'P.M.',initials:'PM',role:'Business Lead',major:'Biomedical Engineering',year:'Class of 2027',hometown:'',involvements:'EWB Cornell Business Lead',interests:'Engineering and humanitarian work, operations',about:'P.M. leads the Business Team, managing fundraising strategy, sponsorships, marketing, and chapter operations that enable all EWB Cornell project teams.',netid:''})">
+        <div class="member-avatar">PM</div>
+        <div class="member-name">P.M.</div>
+        <div class="member-role">Business Lead</div>
+        <div class="member-major">Biomedical Engineering<br>Class of 2027</div>
+        <div class="member-linkedin-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section"><div class="container">
+  <div class="section-head" style="margin-bottom:32px;">
+    <div class="section-label">All Teams</div>
+    <h2 style="margin-top:8px;">Explore Our Teams</h2>
+  </div>
+  <div style="display:grid;gap:20px;">
+
+    <article class="card fade-up" style="padding:0;overflow:hidden;">
+      <div style="display:grid;grid-template-columns:260px 1fr;">
+        <div style="background:linear-gradient(135deg,#051a30,#0a3a25);padding:36px 28px;display:flex;flex-direction:column;justify-content:space-between;">
+          <div>
+            <div style="width:56px;height:56px;background:rgba(52,211,153,0.15);border:1px solid rgba(52,211,153,0.2);border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:18px;">🌐</div>
+            <h2 style="font-size:1.2rem;font-weight:800;color:#fff;margin-bottom:6px;">International Team</h2>
+            <p style="font-size:0.8rem;color:rgba(255,255,255,0.5);margin-bottom:20px;">Bolivia &amp; Tanzania</p>
+            <span style="background:rgba(52,211,153,0.15);color:#34d399;border:1px solid rgba(52,211,153,0.2);padding:4px 12px;border-radius:50px;font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;">10 Members</span>
+          </div>
+        </div>
+        <div style="padding:36px 32px;display:flex;flex-direction:column;justify-content:space-between;">
+          <div>
+            <span class="section-label">International Engineering</span>
+            <p style="font-size:0.93rem;color:var(--text-muted);line-height:1.75;margin:10px 0 18px;">Designing and implementing water &amp; sanitation solutions in partnership with communities worldwide. Currently working on water systems in rural Bolivia and a completed solar irrigation project in Tanzania.</p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px;">
+              <span style="background:var(--bg);border:1px solid var(--border);padding:4px 11px;border-radius:50px;font-size:0.76rem;color:var(--text-muted);">💧 Water Systems</span>
+              <span style="background:var(--bg);border:1px solid var(--border);padding:4px 11px;border-radius:50px;font-size:0.76rem;color:var(--text-muted);">🏗️ Sanitation</span>
+              <span style="background:var(--bg);border:1px solid var(--border);padding:4px 11px;border-radius:50px;font-size:0.76rem;color:var(--text-muted);">☀️ Solar Energy</span>
+            </div>
+          </div>
+          <a href="/pages/teams-international.html" class="btn btn-primary" style="align-self:flex-start;">View Team →</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card fade-up" data-delay="60" style="padding:0;overflow:hidden;">
+      <div style="display:grid;grid-template-columns:260px 1fr;">
+        <div style="background:linear-gradient(135deg,#051a3a,#0a2550);padding:36px 28px;display:flex;flex-direction:column;justify-content:space-between;">
+          <div>
+            <div style="width:56px;height:56px;background:rgba(96,165,250,0.15);border:1px solid rgba(96,165,250,0.2);border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:18px;">🏠</div>
+            <h2 style="font-size:1.2rem;font-weight:800;color:#fff;margin-bottom:6px;">Domestic Team</h2>
+            <p style="font-size:0.8rem;color:rgba(255,255,255,0.5);margin-bottom:20px;">Austin, TX &amp; Pine Ridge, SD</p>
+            <span style="background:rgba(96,165,250,0.15);color:#60a5fa;border:1px solid rgba(96,165,250,0.2);padding:4px 12px;border-radius:50px;font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;">8 Members</span>
+          </div>
+        </div>
+        <div style="padding:36px 32px;display:flex;flex-direction:column;justify-content:space-between;">
+          <div>
+            <span class="section-label">Domestic Engineering</span>
+            <p style="font-size:0.93rem;color:var(--text-muted);line-height:1.75;margin:10px 0 18px;">Tackling critical infrastructure challenges within the United States — sustainable water management for urban agriculture and affordable housing for underserved communities.</p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px;">
+              <span style="background:var(--bg);border:1px solid var(--border);padding:4px 11px;border-radius:50px;font-size:0.76rem;color:var(--text-muted);">🌱 Urban Agriculture</span>
+              <span style="background:var(--bg);border:1px solid var(--border);padding:4px 11px;border-radius:50px;font-size:0.76rem;color:var(--text-muted);">🏡 Housing</span>
+              <span style="background:var(--bg);border:1px solid var(--border);padding:4px 11px;border-radius:50px;font-size:0.76rem;color:var(--text-muted);">💧 Water Mgmt</span>
+            </div>
+          </div>
+          <a href="/pages/teams-domestic.html" class="btn btn-primary" style="align-self:flex-start;">View Team →</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card fade-up" data-delay="120" style="padding:0;overflow:hidden;">
+      <div style="display:grid;grid-template-columns:260px 1fr;">
+        <div style="background:linear-gradient(135deg,#150a2a,#2a1a00);padding:36px 28px;display:flex;flex-direction:column;justify-content:space-between;">
+          <div>
+            <div style="width:56px;height:56px;background:rgba(168,85,247,0.15);border:1px solid rgba(168,85,247,0.2);border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:18px;">🌾</div>
+            <h2 style="font-size:1.2rem;font-weight:800;color:#fff;margin-bottom:6px;">Digital Agriculture</h2>
+            <p style="font-size:0.8rem;color:rgba(255,255,255,0.5);margin-bottom:20px;">Sub-Saharan Africa Focus</p>
+            <span style="background:rgba(168,85,247,0.15);color:#a855f7;border:1px solid rgba(168,85,247,0.2);padding:4px 12px;border-radius:50px;font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;">6 Members</span>
+          </div>
+        </div>
+        <div style="padding:36px 32px;display:flex;flex-direction:column;justify-content:space-between;">
+          <div>
+            <span class="section-label">AI &amp; Robotics</span>
+            <p style="font-size:0.93rem;color:var(--text-muted);line-height:1.75;margin:10px 0 18px;">Developing open-source UAV/UGV systems with deep learning for early crop disease detection, protecting food security in Sub-Saharan Africa. Focused on Northern Leaf Blight in maize.</p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px;">
+              <span style="background:var(--bg);border:1px solid var(--border);padding:4px 11px;border-radius:50px;font-size:0.76rem;color:var(--text-muted);">🤖 ML/AI</span>
+              <span style="background:var(--bg);border:1px solid var(--border);padding:4px 11px;border-radius:50px;font-size:0.76rem;color:var(--text-muted);">🚁 UAV/UGV</span>
+              <span style="background:var(--bg);border:1px solid var(--border);padding:4px 11px;border-radius:50px;font-size:0.76rem;color:var(--text-muted);">🌽 Crop Health</span>
+            </div>
+          </div>
+          <a href="/pages/teams-digital-agriculture.html" class="btn btn-primary" style="align-self:flex-start;">View Team →</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card fade-up" data-delay="180" style="padding:0;overflow:hidden;">
+      <div style="display:grid;grid-template-columns:260px 1fr;">
+        <div style="background:linear-gradient(135deg,#041828,#0a2a3a);padding:36px 28px;display:flex;flex-direction:column;justify-content:space-between;">
+          <div>
+            <div style="width:56px;height:56px;background:rgba(56,189,248,0.15);border:1px solid rgba(56,189,248,0.2);border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:18px;">💻</div>
+            <h2 style="font-size:1.2rem;font-weight:800;color:#fff;margin-bottom:6px;">Software Development</h2>
+            <p style="font-size:0.8rem;color:rgba(255,255,255,0.5);margin-bottom:20px;">React Native · Swift · Firebase</p>
+            <span style="background:rgba(56,189,248,0.15);color:#38bdf8;border:1px solid rgba(56,189,248,0.2);padding:4px 12px;border-radius:50px;font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;">8 Members</span>
+          </div>
+        </div>
+        <div style="padding:36px 32px;display:flex;flex-direction:column;justify-content:space-between;">
+          <div>
+            <span class="section-label">Software Engineering</span>
+            <p style="font-size:0.93rem;color:var(--text-muted);line-height:1.75;margin:10px 0 18px;">Building mobile applications that promote sustainability — a professional wardrobe rental app (Swift/Firebase) and a climate carbon offset platform (React Native) currently in development.</p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px;">
+              <span style="background:var(--bg);border:1px solid var(--border);padding:4px 11px;border-radius:50px;font-size:0.76rem;color:var(--text-muted);">📱 React Native</span>
+              <span style="background:var(--bg);border:1px solid var(--border);padding:4px 11px;border-radius:50px;font-size:0.76rem;color:var(--text-muted);">🍎 Swift/iOS</span>
+              <span style="background:var(--bg);border:1px solid var(--border);padding:4px 11px;border-radius:50px;font-size:0.76rem;color:var(--text-muted);">🔥 Firebase</span>
+            </div>
+          </div>
+          <a href="/pages/teams-software.html" class="btn btn-primary" style="align-self:flex-start;">View Team →</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card fade-up" data-delay="240" style="padding:0;overflow:hidden;">
+      <div style="display:grid;grid-template-columns:260px 1fr;">
+        <div style="background:linear-gradient(135deg,#1a0a00,#2a1800);padding:36px 28px;display:flex;flex-direction:column;justify-content:space-between;">
+          <div>
+            <div style="width:56px;height:56px;background:rgba(251,191,36,0.15);border:1px solid rgba(251,191,36,0.2);border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:18px;">📊</div>
+            <h2 style="font-size:1.2rem;font-weight:800;color:#fff;margin-bottom:6px;">Business Team</h2>
+            <p style="font-size:0.8rem;color:rgba(255,255,255,0.5);margin-bottom:20px;">Fundraising &amp; Operations</p>
+            <span style="background:rgba(251,191,36,0.15);color:#fbbf24;border:1px solid rgba(251,191,36,0.2);padding:4px 12px;border-radius:50px;font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;">4 Members</span>
+          </div>
+        </div>
+        <div style="padding:36px 32px;display:flex;flex-direction:column;justify-content:space-between;">
+          <div>
+            <span class="section-label">Business &amp; Operations</span>
+            <p style="font-size:0.93rem;color:var(--text-muted);line-height:1.75;margin:10px 0 18px;">Powering EWB Cornell through strategic fundraising, community engagement, and operational excellence. $60,000+ raised through crowdfunding campaigns. Also managing website redesign and community education curriculum.</p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px;">
+              <span style="background:var(--bg);border:1px solid var(--border);padding:4px 11px;border-radius:50px;font-size:0.76rem;color:var(--text-muted);">💰 Fundraising</span>
+              <span style="background:var(--bg);border:1px solid var(--border);padding:4px 11px;border-radius:50px;font-size:0.76rem;color:var(--text-muted);">📣 Marketing</span>
+              <span style="background:var(--bg);border:1px solid var(--border);padding:4px 11px;border-radius:50px;font-size:0.76rem;color:var(--text-muted);">📚 Education</span>
+            </div>
+          </div>
+          <a href="/pages/teams-business.html" class="btn btn-primary" style="align-self:flex-start;">View Team →</a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</div></section>
+
+<section class="cta-band">
+  <div class="cta-band-ring cbr1"></div><div class="cta-band-ring cbr2"></div>
+  <div class="container" style="position:relative;"><div class="fade-up">
+    <span class="section-label">Ready to Join?</span>
+    <h2 class="section-title">Find Your Team</h2>
+    <p class="section-subtitle">Each team has unique opportunities. Explore, connect, and apply.</p>
+    <div class="cta-buttons" style="margin-top:32px;">
+      <a href="/pages/apply.html" class="btn btn-primary">Apply Now →</a>
+      <a href="mailto:ewb@cornell.edu" class="btn btn-ghost">Contact Us</a>
+    </div>
+  </div></div>
+</section>
+</main>
+
+<footer class="footer"><div class="container">
+  <div class="footer-grid">
+    <div class="footer-brand"><a href="/" class="footer-logo"><div class="nav-logo-mark">E</div>EWB Cornell</a>
+      <p>Engineers Without Borders at Cornell University.</p>
+        <div class="social-links" style="margin-top:16px;">
+          <a href="https://www.instagram.com/ewbcornell/" class="social-link" target="_blank" rel="noopener" aria-label="Instagram @ewbcornell">
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/ewb-cornell/" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn EWB Cornell">
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+        </div>
+      </div>
+    <div class="footer-col"><h4>Navigate</h4><ul>
+      <li><a href="/pages/about.html">About</a></li><li><a href="/pages/teams.html">Teams</a></li>
+      <li><a href="/pages/projects.html">Projects</a></li><li><a href="/pages/apply.html">Apply</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Teams</h4><ul>
+      <li><a href="/pages/teams-international.html">International</a></li>
+      <li><a href="/pages/teams-domestic.html">Domestic</a></li>
+      <li><a href="/pages/teams-digital-agriculture.html">Digital Agriculture</a></li>
+      <li><a href="/pages/teams-software.html">Software</a></li>
+      <li><a href="/pages/teams-business.html">Business</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Contact</h4>
+      <div class="footer-contact-item"><span>📧</span><a href="mailto:ewb@cornell.edu">ewb@cornell.edu</a></div>
+      <div class="footer-contact-item"><span>📍</span><span>Cornell University, Ithaca NY</span></div>
+    </div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 EWB Cornell.</span></div>
+</div></footer>
+
+<script src="../js/script.js"></script>
+<style>@media(max-width:640px){article.card .nav-inner>div[style*="grid-template-columns:260px"]{grid-template-columns:1fr!important;}}</style>
+</body></html>

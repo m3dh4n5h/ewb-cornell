@@ -1,12 +1,501 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EWB Cornell</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engineers Without Borders — Cornell University</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    // Prevent flash: apply theme before paint
+    (function(){var t=localStorage.getItem('ewb-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();
+  </script>
 </head>
 <body>
-    <script src="js/script.js"></script>
+
+<!-- NAV -->
+<nav class="nav" id="mainNav" aria-label="Main navigation">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo" aria-label="EWB Cornell Home">
+        <div class="nav-logo-mark" aria-hidden="true">E</div>
+        EWB Cornell
+      </a>
+      <div class="nav-right">
+        <ul class="nav-links" role="list">
+          <li><a href="/pages/about.html">About</a></li>
+          <li><a href="/pages/teams.html">Teams</a></li>
+          <li><a href="/pages/projects.html">Projects</a></li>
+          <li><a href="/pages/gallery.html">Gallery</a></li>
+          <li><a href="/pages/sponsors.html">Sponsors</a></li>
+          <li><a href="/pages/apply.html" class="nav-cta">Apply Now</a></li>
+        </ul>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">☀️</button>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-backdrop" id="mobileBackdrop" aria-hidden="true"></div>
+<nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+  <a href="/pages/about.html">About</a>
+  <a href="/pages/teams.html">Teams</a>
+  <a href="/pages/projects.html">Projects</a>
+  <a href="/pages/gallery.html">Gallery</a>
+  <a href="/pages/sponsors.html">Sponsors</a>
+  <div class="mobile-theme-row">
+    <span>Theme</span>
+    <button class="mobile-theme-btn theme-toggle" onclick="toggleTheme()" style="font-size:1.2rem;background:none;border:none;cursor:pointer;">☀️</button>
+  </div>
+  <a href="/pages/apply.html" class="mobile-cta">Apply Now →</a>
+</nav>
+
+<main>
+<!-- ================================================
+     HERO
+================================================ -->
+<section class="hero" id="hero" aria-label="Hero">
+  <div id="heroBg" style="position:absolute;inset:0;background:inherit;will-change:transform;" aria-hidden="true"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="hero-dots" aria-hidden="true"></div>
+  <div class="hero-shapes" aria-hidden="true">
+    <div class="hero-shape hs1"></div>
+    <div class="hero-shape hs2"></div>
+    <div class="hs3"></div>
+  </div>
+
+  <!-- Hero right-side picture spot -->
+  <div style="position:absolute;right:6%;top:50%;transform:translateY(-50%);z-index:2;pointer-events:none;display:none;" class="hero-photo-spot" id="heroPhotoSpot" aria-hidden="true"></div>
+
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="hero-badge-dot" aria-hidden="true"></span>
+        Cornell University Chapter
+      </div>
+      <h1>Engineers<br><em>Without Borders</em><br>at Cornell</h1>
+      <p class="hero-sub">Humanitarian Engineering in Action — <span class="typewriter-wrap" data-typewriter='["Building water systems in Bolivia.","Solar irrigation in Tanzania.","Urban gardens in Austin, TX.","Sustainable housing in Pine Ridge.","AI crop disease detection.","Making real global impact."]'></span></p>
+      <div class="hero-actions">
+        <a href="/pages/apply.html" class="btn btn-primary">
+          Join Our Team
+          <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+        <a href="/pages/about.html" class="btn btn-ghost">Learn More</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll-hint" aria-hidden="true">
+    <span>SCROLL</span>
+    <div class="hero-scroll-line"></div>
+  </div>
+
+  <div class="hero-bar" aria-hidden="true">
+    <div class="container">
+      <div class="hero-bar-inner">
+        <div class="hero-bar-stat"><strong>50+</strong><span>Active Members</span></div>
+        <div class="hero-bar-stat"><strong>$60K+</strong><span>Raised</span></div>
+        <div class="hero-bar-stat"><strong>3</strong><span>Active Projects</span></div>
+        <div class="hero-bar-stat"><strong>2+</strong><span>Countries</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================
+     STATS
+================================================ -->
+<section class="section" aria-labelledby="statsTitle">
+  <div class="container">
+    <div class="section-head center fade-up">
+      <span class="section-label">Our Impact</span>
+      <h2 class="section-title" id="statsTitle">Making a Difference,<br>Measuring What Matters</h2>
+      <p class="section-subtitle">Every number represents real people, real communities, and real change — <span class="typewriter-wrap" data-typewriter='["driven by Cornell engineers.","built through community partnerships.","creating sustainable futures.","from Ithaca to the world."]'></span></p>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card fade-up" data-delay="0">
+        <div class="stat-icon" aria-hidden="true">👥</div>
+        <div class="stat-number" data-target="50" data-suffix="+">50+</div>
+        <div class="stat-label">Active Members</div>
+        <div class="stat-desc">Students across 5 specialized teams</div>
+      </div>
+      <div class="stat-card fade-up" data-delay="80">
+        <div class="stat-icon" aria-hidden="true">💰</div>
+        <div class="stat-number" data-target="60" data-prefix="$" data-suffix="K+">$60K+</div>
+        <div class="stat-label">Raised in Funding</div>
+        <div class="stat-desc">Through campaigns, grants &amp; sponsors</div>
+      </div>
+      <div class="stat-card fade-up" data-delay="160">
+        <div class="stat-icon" aria-hidden="true">🏗️</div>
+        <div class="stat-number" data-target="3">3</div>
+        <div class="stat-label">Active Projects</div>
+        <div class="stat-desc">Bolivia, Tanzania &amp; Austin initiatives</div>
+      </div>
+      <div class="stat-card fade-up" data-delay="240">
+        <div class="stat-icon" aria-hidden="true">🌍</div>
+        <div class="stat-number" data-target="2" data-suffix="+">2+</div>
+        <div class="stat-label">Countries Served</div>
+        <div class="stat-desc">Bolivia, Tanzania &amp; beyond</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================
+     PHOTO STRIP (homepage)
+================================================ -->
+<section style="padding:0;overflow:hidden;background:var(--bg-alt);">
+  <div style="display:flex;gap:0;height:200px;overflow:hidden;">
+    <div style="flex:1;background:linear-gradient(135deg,#051a30,#0a3a25);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;color:rgba(255,255,255,0.5);font-size:0.78rem;border-right:1px solid rgba(255,255,255,0.05);">
+      <span style="font-size:1.6rem;">🏔️</span><span>Bolivia</span>
+    </div>
+    <div style="flex:1;background:linear-gradient(135deg,#2a1200,#5c2a00);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;color:rgba(255,255,255,0.5);font-size:0.78rem;border-right:1px solid rgba(255,255,255,0.05);">
+      <span style="font-size:1.6rem;">☀️</span><span>Tanzania</span>
+    </div>
+    <div style="flex:1;background:linear-gradient(135deg,#0f1a2e,#1a2a1a);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;color:rgba(255,255,255,0.5);font-size:0.78rem;border-right:1px solid rgba(255,255,255,0.05);">
+      <span style="font-size:1.6rem;">🌱</span><span>Austin</span>
+    </div>
+    <div style="flex:1;background:linear-gradient(135deg,#150a2a,#2a1a00);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;color:rgba(255,255,255,0.5);font-size:0.78rem;border-right:1px solid rgba(255,255,255,0.05);">
+      <span style="font-size:1.6rem;">🏠</span><span>Pine Ridge</span>
+    </div>
+    <div style="flex:1;background:linear-gradient(135deg,#0f0728,#180a3a);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;color:rgba(255,255,255,0.5);font-size:0.78rem;position:relative;">
+      <span style="font-size:1.6rem;">🚁</span><span>Digital Ag</span>
+      <a href="/pages/gallery.html" style="position:absolute;bottom:12px;right:12px;background:rgba(255,255,255,0.12);color:#fff;padding:4px 12px;border-radius:50px;font-size:0.72rem;font-weight:600;border:1px solid rgba(255,255,255,0.2);">View Gallery →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================
+     PROJECTS CAROUSEL
+================================================ -->
+<section class="section section-alt" aria-labelledby="projectsTitle">
+  <div class="container">
+    <div class="section-head fade-up" style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;margin-bottom:48px;">
+      <div>
+        <span class="section-label">Featured Work</span>
+        <h2 class="section-title" id="projectsTitle">Projects Changing Lives</h2>
+        <p class="section-subtitle">From Bolivian villages to Texas neighborhoods — real engineering, real impact.</p>
+      </div>
+      <a href="/pages/projects.html" class="btn btn-outline" style="white-space:nowrap;flex-shrink:0;">View All →</a>
+    </div>
+
+    <div class="carousel-wrapper fade-up" data-delay="100">
+      <div class="carousel" id="carousel" role="region" aria-label="Featured projects" aria-live="polite">
+        <div class="carousel-track" id="carouselTrack">
+
+          <div class="carousel-slide" role="group" aria-label="Bolivia Water &amp; Sanitation" onclick="window.location='/pages/project-bolivia.html'" style="cursor:pointer;">
+            <div class="c-bg c-bg-bolivia" aria-hidden="true">
+              <svg width="100%" height="100%" viewBox="0 0 800 480" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                <rect width="800" height="480" fill="#051a30"/>
+                <polygon points="0,480 130,180 280,340 440,140 600,260 760,130 800,180 800,480" fill="rgba(255,255,255,0.04)"/>
+                <polygon points="0,480 80,260 240,370 400,200 560,310 720,170 800,240 800,480" fill="rgba(255,255,255,0.06)"/>
+                <path d="M0,370 Q100,350 200,370 Q300,390 400,370 Q500,350 600,370 Q700,390 800,370 L800,480 L0,480Z" fill="rgba(56,189,248,0.18)"/>
+                <path d="M0,395 Q120,375 240,395 Q360,415 480,395 Q600,375 720,395 L800,395 L800,480 L0,480Z" fill="rgba(56,189,248,0.14)"/>
+                <circle cx="640" cy="100" r="65" fill="rgba(255,210,80,0.1)"/>
+                <circle cx="640" cy="100" r="38" fill="rgba(255,210,80,0.13)"/>
+              </svg>
+            </div>
+            <div class="c-dots-overlay" aria-hidden="true"></div>
+            <div class="c-gradient" aria-hidden="true"></div>
+            <div class="c-content">
+              <span class="c-tag">International</span>
+              <h3>Bolivia Water &amp; Sanitation</h3>
+              <p>Community water systems and sanitation infrastructure for rural Bolivian villages, improving health for hundreds of families.</p>
+              <div class="c-meta">
+                <div class="c-meta-item"><span>📍</span> Bolivia, South America</div>
+                <div class="c-meta-item"><span>🟢</span> Active</div>
+                <div class="c-meta-item" style="margin-left:auto;"><span style="background:rgba(255,255,255,0.15);padding:4px 12px;border-radius:50px;font-size:0.78rem;border:1px solid rgba(255,255,255,0.25);">View Details →</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-slide" role="group" aria-label="Tanzania Solar Irrigation" onclick="window.location='/pages/project-tanzania.html'" style="cursor:pointer;">
+            <div class="c-bg c-bg-tanzania" aria-hidden="true">
+              <svg width="100%" height="100%" viewBox="0 0 800 480" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                <rect width="800" height="480" fill="#2a1200"/>
+                <rect x="0" y="360" width="800" height="120" fill="rgba(0,0,0,0.25)"/>
+                <rect x="60" y="295" width="7" height="75" fill="rgba(0,0,0,0.55)"/>
+                <ellipse cx="63" cy="290" rx="42" ry="19" fill="rgba(0,0,0,0.45)"/>
+                <rect x="340" y="305" width="7" height="65" fill="rgba(0,0,0,0.55)"/>
+                <ellipse cx="343" cy="300" rx="50" ry="21" fill="rgba(0,0,0,0.45)"/>
+                <rect x="630" y="288" width="7" height="80" fill="rgba(0,0,0,0.55)"/>
+                <ellipse cx="633" cy="283" rx="46" ry="20" fill="rgba(0,0,0,0.45)"/>
+                <circle cx="590" cy="95" r="60" fill="rgba(255,155,40,0.18)"/>
+                <circle cx="590" cy="95" r="36" fill="rgba(255,155,40,0.22)"/>
+                <rect x="190" y="240" width="65" height="42" rx="3" fill="rgba(56,189,248,0.35)" transform="rotate(-8 222 261)"/>
+                <rect x="268" y="234" width="65" height="42" rx="3" fill="rgba(56,189,248,0.35)" transform="rotate(-8 300 255)"/>
+              </svg>
+            </div>
+            <div class="c-dots-overlay" aria-hidden="true"></div>
+            <div class="c-gradient" aria-hidden="true"></div>
+            <div class="c-content">
+              <span class="c-tag">International</span>
+              <h3>Tanzania Solar Irrigation</h3>
+              <p>Solar-powered irrigation enabling year-round farming in Tanzania, boosting food security and economic independence.</p>
+              <div class="c-meta">
+                <div class="c-meta-item"><span>📍</span> Tanzania, East Africa</div>
+                <div class="c-meta-item"><span>✅</span> Completed</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-slide" role="group" aria-label="Austin Festival Beach Garden" onclick="window.location='/pages/project-austin.html'" style="cursor:pointer;">
+            <div class="c-bg c-bg-austin" aria-hidden="true">
+              <svg width="100%" height="100%" viewBox="0 0 800 480" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                <rect width="800" height="480" fill="#051a3a"/>
+                <rect x="55" y="275" width="38" height="205" fill="rgba(255,255,255,0.05)"/>
+                <rect x="102" y="235" width="58" height="245" fill="rgba(255,255,255,0.06)"/>
+                <rect x="170" y="255" width="44" height="225" fill="rgba(255,255,255,0.04)"/>
+                <rect x="248" y="215" width="54" height="265" fill="rgba(255,255,255,0.07)"/>
+                <rect x="610" y="195" width="68" height="285" fill="rgba(255,255,255,0.06)"/>
+                <rect x="690" y="225" width="48" height="255" fill="rgba(255,255,255,0.05)"/>
+                <circle cx="415" cy="335" r="44" fill="rgba(52,211,153,0.3)"/>
+                <circle cx="478" cy="322" r="54" fill="rgba(52,211,153,0.25)"/>
+                <circle cx="546" cy="335" r="44" fill="rgba(52,211,153,0.3)"/>
+                <path d="M415,230 Q435,190 445,210 Q455,228 445,250 Q435,264 425,250 Q415,236 415,230Z" fill="rgba(56,189,248,0.45)"/>
+              </svg>
+            </div>
+            <div class="c-dots-overlay" aria-hidden="true"></div>
+            <div class="c-gradient" aria-hidden="true"></div>
+            <div class="c-content">
+              <span class="c-tag">Domestic</span>
+              <h3>Austin Festival Beach Garden</h3>
+              <p>Sustainable water management for the Festival Beach Community Garden, supporting urban agriculture in Austin, Texas.</p>
+              <div class="c-meta">
+                <div class="c-meta-item"><span>📍</span> Austin, Texas</div>
+                <div class="c-meta-item"><span>🟢</span> Active</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-slide" role="group" aria-label="Pine Ridge Sustainable Housing" onclick="window.location='/pages/project-pine-ridge.html'" style="cursor:pointer;">
+            <div class="c-bg c-bg-pineridge" aria-hidden="true">
+              <svg width="100%" height="100%" viewBox="0 0 800 480" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                <rect width="800" height="480" fill="#150a2a"/>
+                <polygon points="80,480 112,295 144,480" fill="rgba(52,211,153,0.3)"/>
+                <polygon points="68,480 112,252 156,480" fill="rgba(52,211,153,0.22)"/>
+                <polygon points="185,480 224,308 263,480" fill="rgba(52,211,153,0.3)"/>
+                <polygon points="610,480 650,285 690,480" fill="rgba(52,211,153,0.3)"/>
+                <polygon points="598,480 650,242 702,480" fill="rgba(52,211,153,0.22)"/>
+                <polygon points="708,480 748,305 788,480" fill="rgba(52,211,153,0.28)"/>
+                <rect x="330" y="298" width="140" height="102" fill="rgba(255,255,255,0.05)" rx="4"/>
+                <polygon points="308,298 400,225 492,298" fill="rgba(255,255,255,0.07)"/>
+                <circle cx="140" cy="75" r="2" fill="rgba(255,255,255,0.55)"/>
+                <circle cx="290" cy="48" r="1.5" fill="rgba(255,255,255,0.45)"/>
+                <circle cx="510" cy="65" r="2" fill="rgba(255,255,255,0.55)"/>
+                <circle cx="660" cy="38" r="1.5" fill="rgba(255,255,255,0.4)"/>
+              </svg>
+            </div>
+            <div class="c-dots-overlay" aria-hidden="true"></div>
+            <div class="c-gradient" aria-hidden="true"></div>
+            <div class="c-content">
+              <span class="c-tag">Domestic</span>
+              <h3>Pine Ridge Sustainable Housing</h3>
+              <p>Affordable, sustainable housing units for the Pine Ridge Reservation — combining modern engineering with community needs.</p>
+              <div class="c-meta">
+                <div class="c-meta-item"><span>📍</span> Pine Ridge, South Dakota</div>
+                <div class="c-meta-item"><span>✅</span> Completed</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <button class="carousel-btn c-prev" id="carouselPrev" aria-label="Previous">
+        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+      </button>
+      <button class="carousel-btn c-next" id="carouselNext" aria-label="Next">
+        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      </button>
+      <div class="carousel-dots" role="tablist" aria-label="Carousel navigation">
+        <button class="c-dot active" role="tab" aria-selected="true" aria-label="Slide 1"></button>
+        <button class="c-dot" role="tab" aria-selected="false" aria-label="Slide 2"></button>
+        <button class="c-dot" role="tab" aria-selected="false" aria-label="Slide 3"></button>
+        <button class="c-dot" role="tab" aria-selected="false" aria-label="Slide 4"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================
+     TEAMS
+================================================ -->
+<section class="section" aria-labelledby="teamsTitle">
+  <div class="container">
+    <div class="section-head center fade-up">
+      <span class="section-label">Meet the Teams</span>
+      <h2 class="section-title" id="teamsTitle">Five Teams, One Mission</h2>
+      <p class="section-subtitle">From field engineering in Bolivia to software apps at Cornell — every team drives impact.</p>
+    </div>
+    <div class="teams-grid">
+      <article class="team-card fade-up" data-delay="0">
+        <div class="team-icon" aria-hidden="true">🌐</div>
+        <h3>International Team</h3>
+        <p>Designing water &amp; sanitation solutions in Bolivia and Tanzania, partnering with communities for lasting infrastructure.</p>
+        <div class="team-card-foot">
+          <span class="team-members-tag">10 members</span>
+          <a href="/pages/teams-international.html" class="btn-team">View Team →</a>
+        </div>
+      </article>
+      <article class="team-card fade-up" data-delay="80">
+        <div class="team-icon" aria-hidden="true">🏠</div>
+        <h3>Domestic Team</h3>
+        <p>Tackling water management and sustainable housing in the United States — Austin gardens to Pine Ridge homes.</p>
+        <div class="team-card-foot">
+          <span class="team-members-tag">8 members</span>
+          <a href="/pages/teams-domestic.html" class="btn-team">View Team →</a>
+        </div>
+      </article>
+      <article class="team-card fade-up" data-delay="160">
+        <div class="team-icon" aria-hidden="true">🌾</div>
+        <h3>Digital Agriculture</h3>
+        <p>Open-source UAV/UGV systems with deep learning for early crop disease detection, protecting Sub-Saharan food security.</p>
+        <div class="team-card-foot">
+          <span class="team-members-tag">6 members</span>
+          <a href="/pages/teams-digital-agriculture.html" class="btn-team">View Team →</a>
+        </div>
+      </article>
+      <article class="team-card fade-up" data-delay="80">
+        <div class="team-icon" aria-hidden="true">💻</div>
+        <h3>Software Development</h3>
+        <p>Building mobile apps for sustainability — wardrobe-sharing platform and climate fund app using React Native &amp; Swift.</p>
+        <div class="team-card-foot">
+          <span class="team-members-tag">8 members</span>
+          <a href="/pages/teams-software.html" class="btn-team">View Team →</a>
+        </div>
+      </article>
+      <article class="team-card fade-up" data-delay="160">
+        <div class="team-icon" aria-hidden="true">📊</div>
+        <h3>Business Team</h3>
+        <p>Powering EWB Cornell through strategic fundraising, community engagement, and operational excellence. $60K+ raised.</p>
+        <div class="team-card-foot">
+          <span class="team-members-tag">4 members</span>
+          <a href="/pages/teams-business.html" class="btn-team">View Team →</a>
+        </div>
+      </article>
+      <article class="team-card team-card-cta fade-up" data-delay="240">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:16px;padding:16px 0;">
+          <div style="width:52px;height:52px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;">✨</div>
+          <h3 style="color:#fff;font-size:1rem;margin:0;">Explore All Teams</h3>
+          <p style="color:rgba(255,255,255,0.5);font-size:0.83rem;margin:0;text-align:center;">See detailed team pages, member profiles, and active projects.</p>
+          <a href="/pages/teams.html" class="btn btn-primary btn-sm">Teams Hub →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================
+     CTA BAND
+================================================ -->
+<section class="cta-band" aria-labelledby="ctaTitle">
+  <div class="cta-band-ring cbr1" aria-hidden="true"></div>
+  <div class="cta-band-ring cbr2" aria-hidden="true"></div>
+  <div class="container" style="position:relative;">
+    <div class="fade-up">
+      <span class="section-label">Get Involved</span>
+      <h2 class="section-title" id="ctaTitle">Ready to Make<br>Global Impact?</h2>
+      <p class="section-subtitle">Join driven Cornell engineers working on real humanitarian projects. Applications are open.</p>
+      <div class="cta-buttons" style="margin-top:36px;">
+        <a href="/pages/apply.html" class="btn btn-primary">Apply Now →</a>
+        <a href="/pages/sponsors.html" class="btn btn-ghost">Donate</a>
+        <a href="mailto:ewb@cornell.edu" class="btn btn-outline" style="border-color:rgba(255,255,255,0.3);color:#fff;">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================
+     NEWSLETTER
+================================================ -->
+<section class="newsletter" aria-labelledby="newsletterTitle">
+  <div class="container">
+    <div class="newsletter-box fade-up">
+      <div class="newsletter-text">
+        <h2 id="newsletterTitle">Stay in the Loop</h2>
+        <p>Get project updates, events, and ways to get involved — straight to your inbox.</p>
+      </div>
+      <form class="newsletter-form" onsubmit="handleNewsletter(event)" aria-label="Newsletter signup">
+        <label for="nlEmail" class="sr-only">Email address</label>
+        <input class="newsletter-input" type="email" id="nlEmail" placeholder="your@email.com" required autocomplete="email">
+        <button type="submit" class="btn btn-primary">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="footer-logo" aria-label="EWB Cornell Home">
+          <div class="nav-logo-mark" aria-hidden="true">E</div>
+          EWB Cornell
+        </a>
+        <p>Engineers Without Borders at Cornell University — applying engineering skills to create sustainable change for communities worldwide.</p>
+        <div class="social-links" aria-label="Social media">
+          <a href="https://www.instagram.com/ewbcornell/" class="social-link" target="_blank" rel="noopener" aria-label="Instagram @ewbcornell">
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/ewb-cornell/" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn EWB Cornell">
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="/pages/about.html">About Us</a></li>
+          <li><a href="/pages/teams.html">Our Teams</a></li>
+          <li><a href="/pages/projects.html">Projects</a></li>
+          <li><a href="/pages/gallery.html">Gallery</a></li>
+          <li><a href="/pages/sponsors.html">Sponsors</a></li>
+          <li><a href="/pages/apply.html">Apply</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Teams</h4>
+        <ul>
+          <li><a href="/pages/teams-international.html">International</a></li>
+          <li><a href="/pages/teams-domestic.html">Domestic</a></li>
+          <li><a href="/pages/teams-digital-agriculture.html">Digital Agriculture</a></li>
+          <li><a href="/pages/teams-software.html">Software</a></li>
+          <li><a href="/pages/teams-business.html">Business</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="footer-contact-item">
+          <span aria-hidden="true">📧</span>
+          <a href="mailto:ewb@cornell.edu">ewb@cornell.edu</a>
+        </div>
+        <div class="footer-contact-item">
+          <span aria-hidden="true">📍</span>
+          <span>Cornell University<br>Ithaca, NY 14853</span>
+        </div>
+        <div class="footer-contact-item">
+          <span aria-hidden="true">🎓</span>
+          <span>College of Engineering<br>Student Organization</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Engineers Without Borders at Cornell. All rights reserved.</span>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
 </body>
 </html>

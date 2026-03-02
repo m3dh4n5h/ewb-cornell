@@ -1,2 +1,2 @@
 # ewb-cornell
-Modern EWB Cornell Website
+New Modern EWB Cornell Website Concept
